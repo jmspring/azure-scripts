@@ -28,12 +28,12 @@ def main(mytimer: func.TimerRequest) -> None:
     filter_prefix=os.environ['AZURE_RESOURCE_GROUP_PREFIX']
     matcthing_resource_groups = []
     for item in rgClient.resource_groups.list():
-        if item.name.startswith(filter_prefix):
+        if item.name.lower().startswith(filter_prefix):
             matcthing_resource_groups.append(item.name)
 
     # check create date for each resource group
     inactivity_window=int(os.environ['AZURE_RESOURCE_GROUP_INACTIVITY'])
-    inactivity_date = datetime.datetime.today() - datetime.timedelta(days=inactivity_window)
+    inactivity_date = datetime.datetime.today() - datetime.timedelta(minutes=inactivity_window)
     groups_to_remove = []
     for rg in matcthing_resource_groups:
         filter = " and ".join([ "eventTimestamp ge {}".format(inactivity_date), "resourceGroupName eq '{}'".format(rg) ])

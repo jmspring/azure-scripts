@@ -17,5 +17,5 @@ In addition, the following variables must be defined:
 - AZURE_CLIENT_ID - the ID of the service principal the script will use to access Azure
 - AZURE_CLIENT_SECRET - the Password of the service principal the script will us to access Azure
 - AZURE_TENANT_ID - the ID of the tenant the service principal is from
-- AZURE_RESOURCE_GROUP_PREFIX - the prefix that resource groups must match to be considered for deletion
-- AZURE_RESOURCE_GROUP_INACTIVITY - how many 'days' of inactivity to consider deleting the identified/matching resource groups
+- AZURE_RESOURCE_GROUP_PREFIX - the prefix that resource groups must match to be considered for deletion (does comparison in lower case)
+- AZURE_RESOURCE_GROUP_INACTIVITY - how many 'minutes' of inactivity to consider deleting the identified/matching resource groups
