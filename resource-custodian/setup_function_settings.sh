@@ -18,7 +18,6 @@ do
 done
 
 if [ -z "$AZURE_TENANT_ID" ] || [ -z "$AZURE_SUBSCRIPTION_ID" ] || [ -z "$AZURE_CLIENT_ID" ] || [ -z "$AZURE_CLIENT_SECRET" ] || [ -z "AZURE_RESOURCE_GROUP_PREFIX" ] || [ -z "AZURE_RESOURCE_GROUP_INACTIVITY" ] || [ -z "$FUNCTION_APP_NAME" ] || [ -z "$RESOURCE_GROUP" ]; then
-	echo "poop"
     echo "Please refer to usage guide on GitHub" >&2
     exit 1
 fi
