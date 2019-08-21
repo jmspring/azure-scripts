@@ -54,7 +54,7 @@ def main(mytimer: func.TimerRequest) -> None:
     # remove groups
     async_handles = []
     for rg in groups_to_remove:
-        print("deleting resource group: {}".format(rg))
+        logging.info("deleting resource group: {}".format(rg))
         async_handles.append(rgClient.resource_groups.delete(rg))
     for handle in async_handles:
         handle.wait()
